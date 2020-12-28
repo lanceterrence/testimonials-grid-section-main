@@ -1,0 +1,202 @@
+//Font
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+//Imports
+@import "sub-scss/variables";
+@import "sub-scss/responsiveness";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label,
+a {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    background-color: $NeutralColor2;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+
+
+    #box-one,
+    #box-two,
+    #box-three,
+    #box-four,
+    #box-five {
+        background-color: $BackgroundColor1;
+        max-width: 580px;
+        padding: 25px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        margin-left: 28px;
+        margin-right: 28px;
+        margin-bottom: 30px;
+
+        .background-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 500px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            z-index: -1;
+        }
+
+        .row {
+            z-index: 10;
+
+            .col.user {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                img {
+                    width: 40px;
+                    border-radius: 50%;
+                    border: 2px solid $NeutralColor2;
+                    margin-right: 20px;
+                }
+
+                h4,
+                h6 {
+                    color: $NeutralColor1;
+                }
+
+                h6 {
+                    font-weight: 500;
+                    letter-spacing: 0.4px;
+                    font-size: 0.8rem;
+                    opacity: 0.5;
+                }
+
+
+            }
+
+            .col.content {
+                margin-top: 16px;
+
+                h2 {
+
+                    font-size: 1.3rem;
+                    color: $NeutralColor2;
+                }
+
+                p {
+                    margin-top: 20px;
+                    font-weight: 500;
+                    color: $NeutralColor2;
+                    opacity: 0.7;
+                    font-size: 0.9rem;
+                    letter-spacing: 0.4px;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+
+    #box-two {
+        background-color: $BackgroundColor2;
+    }
+
+    #box-three {
+        background-color: $BackgroundColor4;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.014),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.018),
+            0 12.5px 10px rgba(0, 0, 0, 0.01),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.012),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.016),
+            0 100px 80px rgba(0, 0, 0, 0.12);
+
+        .row {
+            .col.user {
+                .user__info {
+
+                    h4,
+                    h6 {
+                        color: black;
+                    }
+                }
+            }
+
+            .col.content {
+
+                h2,
+                p {
+                    color: black;
+                }
+            }
+        }
+    }
+
+    #box-four {
+        background-color: $BackgroundColor3;
+
+        .row {
+            .col.user {
+                img {
+                    border: 2px solid $BackgroundColor1;
+                }
+            }
+        }
+    }
+
+    #box-five {
+        background-color: $BackgroundColor4;
+
+        .row {
+            .col.user {
+                .user__info {
+
+                    h4,
+                    h6 {
+                        color: $BackgroundColor2;
+                    }
+                }
+            }
+
+            .col.content {
+
+                h2,
+                p {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.container.also {
+    display: flex;
+}
+
+@include for-phone-only {}
+
+@include for-tablet-portrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {}
+
+@include for-desktop-wide-up {}
